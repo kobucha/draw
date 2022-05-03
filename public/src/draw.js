@@ -1,68 +1,69 @@
-// import { entryArray } from './entry.js';
+import { entryArray } from './entry.js';
 import { textData } from './copy.js';
 
-const entryArray = [
-  {
-    "player_name": "JPB_NECOBUSssssng_hbyt",
-    "career": 3.0,
-    "season": 1.97,
-    "avatar": "https://scontent.oculuscdn.com/v/t64.5771-25/38974629_365364442028195_8251981973274629063_n.jpg?stp=c0.0.1038.1038a_dst-jpg_q92_s360x360&_nc_cat=108&ccb=1-5&_nc_sid=79b88e&_nc_ohc=1wEosAwA-uQAX8Yvsnw&_nc_ht=scontent.oculuscdn.com&oh=00_AT8CD8kdJMBfC-bXjBmcn01Qgw1Cb4b0k_YVpLu806unRw&oe=626906DB"
-  },
-  {
-    "player_name": "jpb",
-    "career": 1.2,
-    "season": 1.77,
-    "avatar": "https://scontent.oculuscdn.com/v/t64.5771-25/38974629_365364442028195_8251981973274629063_n.jpg?stp=c0.0.1038.1038a_dst-jpg_q92_s360x360&_nc_cat=108&ccb=1-5&_nc_sid=79b88e&_nc_ohc=1wEosAwA-uQAX8Yvsnw&_nc_ht=scontent.oculuscdn.com&oh=00_AT8CD8kdJMBfC-bXjBmcn01Qgw1Cb4b0k_YVpLu806unRw&oe=626906DB"
-  },
-  {
-    "player_name": "bpj",
-    "career": 1.1,
-    "season": 1.96,
-    "avatar": "https://scontent.oculuscdn.com/v/t64.5771-25/38974629_365364442028195_8251981973274629063_n.jpg?stp=c0.0.1038.1038a_dst-jpg_q92_s360x360&_nc_cat=108&ccb=1-5&_nc_sid=79b88e&_nc_ohc=1wEosAwA-uQAX8Yvsnw&_nc_ht=scontent.oculuscdn.com&oh=00_AT8CD8kdJMBfC-bXjBmcn01Qgw1Cb4b0k_YVpLu806unRw&oe=626906DB"
-  },
-  {
-    "player_name": "jbp",
-    "career": 1.3,
-    "season": 1.97,
-    "avatar": "https://scontent.oculuscdn.com/v/t64.5771-25/38974629_365364442028195_8251981973274629063_n.jpg?stp=c0.0.1038.1038a_dst-jpg_q92_s360x360&_nc_cat=108&ccb=1-5&_nc_sid=79b88e&_nc_ohc=1wEosAwA-uQAX8Yvsnw&_nc_ht=scontent.oculuscdn.com&oh=00_AT8CD8kdJMBfC-bXjBmcn01Qgw1Cb4b0k_YVpLu806unRw&oe=626906DB"
-  },
-  {
-    "player_name": "j",
-    "career": 1.5,
-    "season": 1.97,
-    "avatar": "https://scontent.oculuscdn.com/v/t64.5771-25/38974629_365364442028195_8251981973274629063_n.jpg?stp=c0.0.1038.1038a_dst-jpg_q92_s360x360&_nc_cat=108&ccb=1-5&_nc_sid=79b88e&_nc_ohc=1wEosAwA-uQAX8Yvsnw&_nc_ht=scontent.oculuscdn.com&oh=00_AT8CD8kdJMBfC-bXjBmcn01Qgw1Cb4b0k_YVpLu806unRw&oe=626906DB"
-  },
-  {
-    "player_name": "JPB",
-    "career": 1.7,
-    "season": 1.97,
-    "avatar": "https://scontent.oculuscdn.com/v/t64.5771-25/38974629_365364442028195_8251981973274629063_n.jpg?stp=c0.0.1038.1038a_dst-jpg_q92_s360x360&_nc_cat=108&ccb=1-5&_nc_sid=79b88e&_nc_ohc=1wEosAwA-uQAX8Yvsnw&_nc_ht=scontent.oculuscdn.com&oh=00_AT8CD8kdJMBfC-bXjBmcn01Qgw1Cb4b0k_YVpLu806unRw&oe=626906DB"
-  },
-  {
-    "player_name": "s",
-    "career": 1.2,
-    "season": 1.97,
-    "avatar": "https://scontent.oculuscdn.com/v/t64.5771-25/38974629_365364442028195_8251981973274629063_n.jpg?stp=c0.0.1038.1038a_dst-jpg_q92_s360x360&_nc_cat=108&ccb=1-5&_nc_sid=79b88e&_nc_ohc=1wEosAwA-uQAX8Yvsnw&_nc_ht=scontent.oculuscdn.com&oh=00_AT8CD8kdJMBfC-bXjBmcn01Qgw1Cb4b0k_YVpLu806unRw&oe=626906DB"
-  },
-  {
-    "player_name": "JPB",
-    "career": 1.8,
-    "season": 1.97,
-    "avatar": "https://scontent.oculuscdn.com/v/t64.5771-25/38974629_365364442028195_8251981973274629063_n.jpg?stp=c0.0.1038.1038a_dst-jpg_q92_s360x360&_nc_cat=108&ccb=1-5&_nc_sid=79b88e&_nc_ohc=1wEosAwA-uQAX8Yvsnw&_nc_ht=scontent.oculuscdn.com&oh=00_AT8CD8kdJMBfC-bXjBmcn01Qgw1Cb4b0k_YVpLu806unRw&oe=626906DB"
-  },
-  {
-    "player_name": "NECOBUS",
-    "career": 1.3,
-    "season": 1.97,
-    "avatar": "https://scontent.oculuscdn.com/v/t64.5771-25/38974629_365364442028195_8251981973274629063_n.jpg?stp=c0.0.1038.1038a_dst-jpg_q92_s360x360&_nc_cat=108&ccb=1-5&_nc_sid=79b88e&_nc_ohc=1wEosAwA-uQAX8Yvsnw&_nc_ht=scontent.oculuscdn.com&oh=00_AT8CD8kdJMBfC-bXjBmcn01Qgw1Cb4b0k_YVpLu806unRw&oe=626906DB"
-  },
-  {
-    "player_name": "NECOBUS",
-    "career": 1.1,
-    "season": 1.9,
-    "avatar": "https://scontent.oculuscdn.com/v/t64.5771-25/38974629_365364442028195_8251981973274629063_n.jpg?stp=c0.0.1038.1038a_dst-jpg_q92_s360x360&_nc_cat=108&ccb=1-5&_nc_sid=79b88e&_nc_ohc=1wEosAwA-uQAX8Yvsnw&_nc_ht=scontent.oculuscdn.com&oh=00_AT8CD8kdJMBfC-bXjBmcn01Qgw1Cb4b0k_YVpLu806unRw&oe=626906DB"
-  }
-];
+// 検証用 仮のエントリープレイヤー配列
+// const entryArray = [
+//   {
+//     "player_name": "JPB_NECOBUSssssng_hbyt",
+//     "career": 3.0,
+//     "season": 1.97,
+//     "avatar": "https://scontent.oculuscdn.com/v/t64.5771-25/38974629_365364442028195_8251981973274629063_n.jpg?stp=c0.0.1038.1038a_dst-jpg_q92_s360x360&_nc_cat=108&ccb=1-5&_nc_sid=79b88e&_nc_ohc=1wEosAwA-uQAX8Yvsnw&_nc_ht=scontent.oculuscdn.com&oh=00_AT8CD8kdJMBfC-bXjBmcn01Qgw1Cb4b0k_YVpLu806unRw&oe=626906DB"
+//   },
+//   {
+//     "player_name": "jpb",
+//     "career": 1.2,
+//     "season": 1.77,
+//     "avatar": "https://scontent.oculuscdn.com/v/t64.5771-25/38974629_365364442028195_8251981973274629063_n.jpg?stp=c0.0.1038.1038a_dst-jpg_q92_s360x360&_nc_cat=108&ccb=1-5&_nc_sid=79b88e&_nc_ohc=1wEosAwA-uQAX8Yvsnw&_nc_ht=scontent.oculuscdn.com&oh=00_AT8CD8kdJMBfC-bXjBmcn01Qgw1Cb4b0k_YVpLu806unRw&oe=626906DB"
+//   },
+//   {
+//     "player_name": "bpj",
+//     "career": 1.1,
+//     "season": 1.96,
+//     "avatar": "https://scontent.oculuscdn.com/v/t64.5771-25/38974629_365364442028195_8251981973274629063_n.jpg?stp=c0.0.1038.1038a_dst-jpg_q92_s360x360&_nc_cat=108&ccb=1-5&_nc_sid=79b88e&_nc_ohc=1wEosAwA-uQAX8Yvsnw&_nc_ht=scontent.oculuscdn.com&oh=00_AT8CD8kdJMBfC-bXjBmcn01Qgw1Cb4b0k_YVpLu806unRw&oe=626906DB"
+//   },
+//   {
+//     "player_name": "jbp",
+//     "career": 1.3,
+//     "season": 1.97,
+//     "avatar": "https://scontent.oculuscdn.com/v/t64.5771-25/38974629_365364442028195_8251981973274629063_n.jpg?stp=c0.0.1038.1038a_dst-jpg_q92_s360x360&_nc_cat=108&ccb=1-5&_nc_sid=79b88e&_nc_ohc=1wEosAwA-uQAX8Yvsnw&_nc_ht=scontent.oculuscdn.com&oh=00_AT8CD8kdJMBfC-bXjBmcn01Qgw1Cb4b0k_YVpLu806unRw&oe=626906DB"
+//   },
+//   {
+//     "player_name": "j",
+//     "career": 1.5,
+//     "season": 1.97,
+//     "avatar": "https://scontent.oculuscdn.com/v/t64.5771-25/38974629_365364442028195_8251981973274629063_n.jpg?stp=c0.0.1038.1038a_dst-jpg_q92_s360x360&_nc_cat=108&ccb=1-5&_nc_sid=79b88e&_nc_ohc=1wEosAwA-uQAX8Yvsnw&_nc_ht=scontent.oculuscdn.com&oh=00_AT8CD8kdJMBfC-bXjBmcn01Qgw1Cb4b0k_YVpLu806unRw&oe=626906DB"
+//   },
+//   {
+//     "player_name": "JPB",
+//     "career": 1.7,
+//     "season": 1.97,
+//     "avatar": "https://scontent.oculuscdn.com/v/t64.5771-25/38974629_365364442028195_8251981973274629063_n.jpg?stp=c0.0.1038.1038a_dst-jpg_q92_s360x360&_nc_cat=108&ccb=1-5&_nc_sid=79b88e&_nc_ohc=1wEosAwA-uQAX8Yvsnw&_nc_ht=scontent.oculuscdn.com&oh=00_AT8CD8kdJMBfC-bXjBmcn01Qgw1Cb4b0k_YVpLu806unRw&oe=626906DB"
+//   },
+//   {
+//     "player_name": "s",
+//     "career": 1.2,
+//     "season": 1.97,
+//     "avatar": "https://scontent.oculuscdn.com/v/t64.5771-25/38974629_365364442028195_8251981973274629063_n.jpg?stp=c0.0.1038.1038a_dst-jpg_q92_s360x360&_nc_cat=108&ccb=1-5&_nc_sid=79b88e&_nc_ohc=1wEosAwA-uQAX8Yvsnw&_nc_ht=scontent.oculuscdn.com&oh=00_AT8CD8kdJMBfC-bXjBmcn01Qgw1Cb4b0k_YVpLu806unRw&oe=626906DB"
+//   },
+//   {
+//     "player_name": "JPB",
+//     "career": 1.8,
+//     "season": 1.97,
+//     "avatar": "https://scontent.oculuscdn.com/v/t64.5771-25/38974629_365364442028195_8251981973274629063_n.jpg?stp=c0.0.1038.1038a_dst-jpg_q92_s360x360&_nc_cat=108&ccb=1-5&_nc_sid=79b88e&_nc_ohc=1wEosAwA-uQAX8Yvsnw&_nc_ht=scontent.oculuscdn.com&oh=00_AT8CD8kdJMBfC-bXjBmcn01Qgw1Cb4b0k_YVpLu806unRw&oe=626906DB"
+//   },
+//   {
+//     "player_name": "NECOBUS",
+//     "career": 1.3,
+//     "season": 1.97,
+//     "avatar": "https://scontent.oculuscdn.com/v/t64.5771-25/38974629_365364442028195_8251981973274629063_n.jpg?stp=c0.0.1038.1038a_dst-jpg_q92_s360x360&_nc_cat=108&ccb=1-5&_nc_sid=79b88e&_nc_ohc=1wEosAwA-uQAX8Yvsnw&_nc_ht=scontent.oculuscdn.com&oh=00_AT8CD8kdJMBfC-bXjBmcn01Qgw1Cb4b0k_YVpLu806unRw&oe=626906DB"
+//   },
+//   {
+//     "player_name": "NECOBUS",
+//     "career": 1.1,
+//     "season": 1.9,
+//     "avatar": "https://scontent.oculuscdn.com/v/t64.5771-25/38974629_365364442028195_8251981973274629063_n.jpg?stp=c0.0.1038.1038a_dst-jpg_q92_s360x360&_nc_cat=108&ccb=1-5&_nc_sid=79b88e&_nc_ohc=1wEosAwA-uQAX8Yvsnw&_nc_ht=scontent.oculuscdn.com&oh=00_AT8CD8kdJMBfC-bXjBmcn01Qgw1Cb4b0k_YVpLu806unRw&oe=626906DB"
+//   }
+// ];
 
 /**
  * 後ほどやる（キルレの色分け）
@@ -121,7 +122,7 @@ function draw() {
       $('#draw-btn .loading').css('display', 'none');
       return;
     } else {
-      // playerNameClass[i].classList.remove("error-empty");
+      playerNameClass[i].classList.remove("error-empty");
     }
   }
 
