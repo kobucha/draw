@@ -17,7 +17,6 @@ router.post('/', (req, res, next) => {
     // キャリアゲーム数
     const careerGamesPlayedObj = res1.data.playerStatistics.filter(target => {
       if (target.statisticName.indexOf('CareerGamesPlayed') !== -1) {
-        console.log(target);
         return target;
       }
     });
@@ -33,7 +32,6 @@ router.post('/', (req, res, next) => {
     // キャリア Kill数
     const careerKillsObj = res1.data.playerStatistics.filter(target => {
       if (target.statisticName.indexOf('CareerKills') !== -1) {
-        console.log(target);
         return target;
       }
     });
@@ -49,7 +47,6 @@ router.post('/', (req, res, next) => {
     // シーズンゲーム数
     const seasonGamesPlayedObj = res1.data.playerStatistics.filter(target => {
       if (target.statisticName.indexOf('SeasonGamesPlayed') !== -1) {
-        console.log(target);
         return target;
       }
     });
@@ -65,7 +62,6 @@ router.post('/', (req, res, next) => {
     // シーズン Kill数
     const seasonKillsObj = res1.data.playerStatistics.filter(target => {
       if (target.statisticName.indexOf('SeasonKills') !== -1) {
-        console.log(target);
         return target;
       }
     });

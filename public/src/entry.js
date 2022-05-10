@@ -16,7 +16,7 @@ const entryPlayerNum = 18; // 初期エントリープレイヤー人数
 // 入力しているフォームを判別するための連番を振る
 function serialNumber() {
   // ラベルに連番を振る
-  $('.entry-player label').each(function (i) {
+  $('.entry-player .entry-number').each(function (i) {
     $(this).text(`No.${i + 1}`);
   });
   // ID に連番を振る
@@ -60,8 +60,7 @@ function newPlayerCreate() {
     newEntryDiv.className = "entry-player relative";
     $('#entry').append(newEntryDiv);
 
-    // newLabel.innerText = `No.${i}`
-    newLabel.className = "block mb-0.5 text-lg text-gray-300 font-caveat"
+    newLabel.className = "entry-number block mb-0.5 text-lg text-gray-300 font-caveat"
     newEntryDiv.appendChild(newLabel);
 
     // プレイヤー名入力 <input> 作成
@@ -73,7 +72,7 @@ function newPlayerCreate() {
     newEntryDiv.appendChild(newEntry);
 
     // プレイヤー候補出力用の空 Div
-    playerSelect.className = "player-select absolute z-50";
+    playerSelect.className = "player-select";
     newEntryDiv.append(playerSelect);
 
     // Close ボタン
@@ -81,7 +80,7 @@ function newPlayerCreate() {
     newEntryDiv.append(closeBtn);
 
     // Loading アイコン
-    loadingIcon.className = "flex justify-center space-x-1 absolute top-1 right-7 z-10 hidden loading";
+    loadingIcon.className = "justify-center space-x-1 absolute top-1 right-7 z-10 hidden loading";
     loadingIcon.insertAdjacentHTML("beforeend",
       `<div class="animate-ping  h-3 w-0.5 bg-blue-600 rounded-full"></div>
       <div class="animate-ping  h-3 w-0.5 bg-blue-600 rounded-full animation-delay-100"></div>
@@ -120,7 +119,6 @@ function deletePlayer(event) {
   // エントリープレイヤーの配列から指定プレイヤーを削除
   const indexAry = $(`${deleteTarget}`).data("id");
   entryArray.splice(indexAry - 1, 1)
-  console.log(entryArray);
 
   $(deleteTarget).remove();
   // data-id に連番を振りなおす (.entry-player)
@@ -128,7 +126,7 @@ function deletePlayer(event) {
     $(this).data('id', i + 1)
   });
   // ラベルに連番を振りなおす
-  $('.entry-player label').each(function (i) {
+  $('.entry-player .entry-number').each(function (i) {
     $(this).text(`No.${i + 1}`);
   });
 };

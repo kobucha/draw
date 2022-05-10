@@ -15,72 +15,64 @@
   .animation-delay-400 {
     animation-delay: 0.4s;
   }
-}
+  .player-choice {
+    @apply flex items-center relative h-[40px] pl-[50px] whitespace-nowrap bg-contain bg-no-repeat border-b-slate-900 border-b before:absolute before:content-['?'] before:left-3 before:font-alfa_slab_one before:text-xl before:z-[-1] hover:bg-slate-900 hover:cursor-pointer;
+  }
+  .error-empty {
+    @apply border-red-900 border shadow-[0_0_8px_0_rgba(160,0,0,1)] placeholder:text-red-700;
+  }
+  .strong-squad .kill-rate-sum span {
+    @apply border-b-[3px] border-orange-600 border-double;
+  }
+  .weak-squad .kill-rate-sum span {
+    @apply border-b-[3px] border-blue-600 border-double;
+  }
+  .entry-error .error {
+    @apply text-center text-2xl text-red-600 mt-5;
+  }
+  #error-message .warning {
+    @apply text-center text-2xl text-amber-400 mt-5;
+  }
+  .entry.warning{
+    @apply border-amber-400;
+  }
 
-.player-list {
-  @apply flex flex-wrap items-stretch bg-gray-700 w-[120%] mt-1.5;
-}
-.player-list dt {
-  @apply flex justify-center items-center w-[35px] bg-slate-800 h-[35px];
-}
-.player-list dd {
-  @apply text-sm text-white py-0.5 px-2 flex items-center w-[calc(100%_-_35px)] border-b-slate-700 border-b;
-}
-.player-list dt:hover, .player-list dd:hover {
-  @apply cursor-pointer;}
-
-.player-list dd:hover {
-  @apply bg-slate-800 text-white cursor-pointer border-b-gray-700;
-}
-.error-empty {
-  @apply border-red-900 border shadow-[0_0_8px_0_rgba(160,0,0,1)] placeholder:text-red-700;
-}
-.strong-squad .kill-rate-sum span {
-  @apply border-b-[3px] border-orange-600 border-double;
-}
-.weak-squad .kill-rate-sum span {
-  @apply border-b-[3px] border-blue-600 border-double;
-}
-.entry-error .error {
-  @apply text-center text-2xl text-red-600 mt-5;
-}
-#error-message .warning {
-  @apply text-center text-2xl text-amber-400 mt-5;
-}
-.entry.warning{
-  @apply border-amber-400;
-}
-
-/* エントリーフォーム削除ボタン */
-.delete {
-  width: 20px;
-  height: 20px;
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-.delete:before, .delete:after {
-  content: "";
-  top: 50%;
-  left: 50%;
-  width: 3px;
-  height: 15px;
-  background: #fff;
-  border-radius: 1.5px;
-  position: absolute;
-}
-.delete:before {
-  -webkit-transform: translate(-50%, -50%) rotate(45deg);
-  transform: translate(-50%, -50%) rotate(45deg);
-}
-.delete:after {
-  -webkit-transform: translate(-50%, -50%) rotate(-45deg);
-  transform: translate(-50%, -50%) rotate(-45deg);
-}
-.delete:hover {
-  background: #fff;
-  cursor: pointer;
-}
-.delete:hover:before, .delete:hover:after {
-  background: #000;
+  /* エントリーフォーム削除ボタン */
+  .delete {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  .delete:before, .delete:after {
+    content: "";
+    top: 50%;
+    left: 50%;
+    width: 3px;
+    height: 15px;
+    background: #fff;
+    border-radius: 1.5px;
+    position: absolute;
+  }
+  .delete:before {
+    -webkit-transform: translate(-50%, -50%) rotate(45deg);
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+  .delete:after {
+    -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+  .delete:hover {
+    background: #fff;
+    cursor: pointer;
+  }
+  .delete:hover:before, .delete:hover:after {
+    background: #000;
+  }
+  .custom-kill-rate input[type=number]::-webkit-inner-spin-button, 
+  .custom-kill-rate input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none; 
+    margin: 0; 
+  }
 }

@@ -2,7 +2,6 @@ import { doAjax } from "./ajax-player-id.js";
 import { newPlayerCreate, deletePlayer } from "./entry.js";
 import { draw } from "./draw.js";
 
-
 /**
  * プレイヤー名のインプットに文字を入力した時の処理
  */
@@ -28,7 +27,7 @@ function ajaxSetTimeoutId(data, target) {
   timeoutId = setTimeout(function () {
     // ajax通信を実行
     doAjax(data, target);
-  }, 500);// 指定秒後に実行
+  }, 1000);// 指定秒後に実行
 }
 
 /**

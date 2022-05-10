@@ -1,105 +1,33 @@
 import { entryArray } from './entry.js';
 import { textData } from './copy.js';
 
-// 検証用 仮のエントリープレイヤー配列
-// const entryArray = [
-//   {
-//     "player_name": "JPB_NECOBUSssssng_hbyt",
-//     "career": 3.0,
-//     "season": 1.97,
-//     "avatar": "https://scontent.oculuscdn.com/v/t64.5771-25/38974629_365364442028195_8251981973274629063_n.jpg?stp=c0.0.1038.1038a_dst-jpg_q92_s360x360&_nc_cat=108&ccb=1-5&_nc_sid=79b88e&_nc_ohc=1wEosAwA-uQAX8Yvsnw&_nc_ht=scontent.oculuscdn.com&oh=00_AT8CD8kdJMBfC-bXjBmcn01Qgw1Cb4b0k_YVpLu806unRw&oe=626906DB"
-//   },
-//   {
-//     "player_name": "jpb",
-//     "career": 1.2,
-//     "season": 1.77,
-//     "avatar": "https://scontent.oculuscdn.com/v/t64.5771-25/38974629_365364442028195_8251981973274629063_n.jpg?stp=c0.0.1038.1038a_dst-jpg_q92_s360x360&_nc_cat=108&ccb=1-5&_nc_sid=79b88e&_nc_ohc=1wEosAwA-uQAX8Yvsnw&_nc_ht=scontent.oculuscdn.com&oh=00_AT8CD8kdJMBfC-bXjBmcn01Qgw1Cb4b0k_YVpLu806unRw&oe=626906DB"
-//   },
-//   {
-//     "player_name": "bpj",
-//     "career": 1.1,
-//     "season": 1.96,
-//     "avatar": "https://scontent.oculuscdn.com/v/t64.5771-25/38974629_365364442028195_8251981973274629063_n.jpg?stp=c0.0.1038.1038a_dst-jpg_q92_s360x360&_nc_cat=108&ccb=1-5&_nc_sid=79b88e&_nc_ohc=1wEosAwA-uQAX8Yvsnw&_nc_ht=scontent.oculuscdn.com&oh=00_AT8CD8kdJMBfC-bXjBmcn01Qgw1Cb4b0k_YVpLu806unRw&oe=626906DB"
-//   },
-//   {
-//     "player_name": "jbp",
-//     "career": 1.3,
-//     "season": 1.97,
-//     "avatar": "https://scontent.oculuscdn.com/v/t64.5771-25/38974629_365364442028195_8251981973274629063_n.jpg?stp=c0.0.1038.1038a_dst-jpg_q92_s360x360&_nc_cat=108&ccb=1-5&_nc_sid=79b88e&_nc_ohc=1wEosAwA-uQAX8Yvsnw&_nc_ht=scontent.oculuscdn.com&oh=00_AT8CD8kdJMBfC-bXjBmcn01Qgw1Cb4b0k_YVpLu806unRw&oe=626906DB"
-//   },
-//   {
-//     "player_name": "j",
-//     "career": 1.5,
-//     "season": 1.97,
-//     "avatar": "https://scontent.oculuscdn.com/v/t64.5771-25/38974629_365364442028195_8251981973274629063_n.jpg?stp=c0.0.1038.1038a_dst-jpg_q92_s360x360&_nc_cat=108&ccb=1-5&_nc_sid=79b88e&_nc_ohc=1wEosAwA-uQAX8Yvsnw&_nc_ht=scontent.oculuscdn.com&oh=00_AT8CD8kdJMBfC-bXjBmcn01Qgw1Cb4b0k_YVpLu806unRw&oe=626906DB"
-//   },
-//   {
-//     "player_name": "JPB",
-//     "career": 1.7,
-//     "season": 1.97,
-//     "avatar": "https://scontent.oculuscdn.com/v/t64.5771-25/38974629_365364442028195_8251981973274629063_n.jpg?stp=c0.0.1038.1038a_dst-jpg_q92_s360x360&_nc_cat=108&ccb=1-5&_nc_sid=79b88e&_nc_ohc=1wEosAwA-uQAX8Yvsnw&_nc_ht=scontent.oculuscdn.com&oh=00_AT8CD8kdJMBfC-bXjBmcn01Qgw1Cb4b0k_YVpLu806unRw&oe=626906DB"
-//   },
-//   {
-//     "player_name": "s",
-//     "career": 1.2,
-//     "season": 1.97,
-//     "avatar": "https://scontent.oculuscdn.com/v/t64.5771-25/38974629_365364442028195_8251981973274629063_n.jpg?stp=c0.0.1038.1038a_dst-jpg_q92_s360x360&_nc_cat=108&ccb=1-5&_nc_sid=79b88e&_nc_ohc=1wEosAwA-uQAX8Yvsnw&_nc_ht=scontent.oculuscdn.com&oh=00_AT8CD8kdJMBfC-bXjBmcn01Qgw1Cb4b0k_YVpLu806unRw&oe=626906DB"
-//   },
-//   {
-//     "player_name": "JPB",
-//     "career": 1.8,
-//     "season": 1.97,
-//     "avatar": "https://scontent.oculuscdn.com/v/t64.5771-25/38974629_365364442028195_8251981973274629063_n.jpg?stp=c0.0.1038.1038a_dst-jpg_q92_s360x360&_nc_cat=108&ccb=1-5&_nc_sid=79b88e&_nc_ohc=1wEosAwA-uQAX8Yvsnw&_nc_ht=scontent.oculuscdn.com&oh=00_AT8CD8kdJMBfC-bXjBmcn01Qgw1Cb4b0k_YVpLu806unRw&oe=626906DB"
-//   },
-//   {
-//     "player_name": "NECOBUS",
-//     "career": 1.3,
-//     "season": 1.97,
-//     "avatar": "https://scontent.oculuscdn.com/v/t64.5771-25/38974629_365364442028195_8251981973274629063_n.jpg?stp=c0.0.1038.1038a_dst-jpg_q92_s360x360&_nc_cat=108&ccb=1-5&_nc_sid=79b88e&_nc_ohc=1wEosAwA-uQAX8Yvsnw&_nc_ht=scontent.oculuscdn.com&oh=00_AT8CD8kdJMBfC-bXjBmcn01Qgw1Cb4b0k_YVpLu806unRw&oe=626906DB"
-//   },
-//   {
-//     "player_name": "NECOBUS",
-//     "career": 1.1,
-//     "season": 1.9,
-//     "avatar": "https://scontent.oculuscdn.com/v/t64.5771-25/38974629_365364442028195_8251981973274629063_n.jpg?stp=c0.0.1038.1038a_dst-jpg_q92_s360x360&_nc_cat=108&ccb=1-5&_nc_sid=79b88e&_nc_ohc=1wEosAwA-uQAX8Yvsnw&_nc_ht=scontent.oculuscdn.com&oh=00_AT8CD8kdJMBfC-bXjBmcn01Qgw1Cb4b0k_YVpLu806unRw&oe=626906DB"
-//   }
-// ];
-
 /**
- * 後ほどやる（キルレの色分け）
+ * キルレートの表示の色分け
  */
-$('#career').on(('click'), function () {
-  $('.green').addClass("text-green-400");
-  $('.red').removeClass("text-red-400");
-});
 $('#season').on(('click'), function () {
-  $('.red').addClass("text-red-400");
-  $('.green').removeClass("text-green-400");
+  $('.career-kill-rate').removeClass("text-green-500 animate-fadeIn");
+  $('.career-kill-rate').addClass("text-gray-500");
+  $('.season-kill-rate').removeClass("text-gray-500 animate-fadeIn");
+  $('.season-kill-rate').addClass("text-green-500 animate-fadeIn");
+});
+$('#career').on(('click'), function () {
+  $('.season-kill-rate').removeClass("text-green-500 animate-fadeIn");
+  $('.season-kill-rate').addClass("text-gray-500");
+  $('.career-kill-rate').removeClass("text-gray-500 animate-fadeIn0");
+  $('.career-kill-rate').addClass("text-green-500 animate-fadeIn");
+});
+$('#custom').on(('click'), function () {
+  if ($(this).prop('checked')) {
+    $('.custom-kill-rate').addClass("flex");
+    $('.custom-kill-rate').removeClass("hidden");
+  } else {
+    $('.custom-kill-rate').removeClass("flex");
+    $('.custom-kill-rate').addClass("hidden");
+  }
 });
 
 // 抽選をする
 function draw() {
-  // entryArray をディープコピー
-  const drawArray = entryArray.map(elem => {
-    if (Array.isArray(elem)) {
-      return [...elem]
-    } else if (typeof (elem) == "object") {
-      return { ...elem }
-    } else return elem
-  })
-  // 連想配列を作り直す（シーズンキルレかキャリアキルレのどちらを使うか）
-  for (let i = 0; i < drawArray.length; i++) {
-    if ($('#career').prop("checked")) {
-      drawArray[i].kill_rate = entryArray[i].career;
-      delete drawArray[i].career;
-      delete drawArray[i].season;
-    } else if ($('#season').prop("checked")) {
-      drawArray[i].kill_rate = entryArray[i].season;
-      delete drawArray[i].career;
-      delete drawArray[i].season;
-    }
-  }
-
   $('#draw-btn .loading').css('display', 'block');
   $('#draw').empty();
   $('#success-message').empty();
@@ -116,13 +44,45 @@ function draw() {
   const playerNameClass = document.querySelectorAll(".input-player");
   for (let i = 0; i < entryArray.length; i++) {
     if (entryArray[i] === undefined) {
-      $('#entry').after(`<div class="entry-error animate-fadeIn><p class="error">No.${i + 1} player name has not been entered.</p>`);
+      $('#entry').after(`
+      <div class="entry-error text-red-700 text-2xl mt-5 animate-fadeIn text-center">
+        <p>No.${i + 1} player name has not been entered.</p>
+      </div>`);
       playerNameClass[i].classList.add("error-empty");
       // 抽選中の Loading を削除
       $('#draw-btn .loading').css('display', 'none');
       return;
     } else {
       playerNameClass[i].classList.remove("error-empty");
+    }
+  }
+
+  // entryArray を deep copy
+  const drawArray = entryArray.map(elem => {
+    if (Array.isArray(elem)) {
+      return [...elem]
+    } else if (typeof (elem) == "object") {
+      return { ...elem }
+    } else return elem
+  });
+
+  // 抽選用の連想配列を作り直す（シーズンキルレかキャリアキルレかカスタムキルレのどれを使うか）
+  for (let i = 0; i < drawArray.length; i++) {
+    if ($(`.custom-kill-rate input`).eq(i).val() !== "" && ($('#custom').prop('checked'))) {
+      // カスタムキルレートの入力があれば
+      drawArray[i].kill_rate = Number($(`.custom-kill-rate input`).eq(i).val());
+      delete drawArray[i].career;
+      delete drawArray[i].season;
+    } else if ($('#career').prop("checked")) {
+      // キャリアキルレートを使う
+      drawArray[i].kill_rate = entryArray[i].career;
+      delete drawArray[i].career;
+      delete drawArray[i].season;
+    } else if ($('#season').prop("checked")) {
+      // シーズンキルレートを使う
+      drawArray[i].kill_rate = entryArray[i].season;
+      delete drawArray[i].career;
+      delete drawArray[i].season;
     }
   }
 
@@ -139,13 +99,13 @@ function draw() {
       [array[i], array[j]] = [array[j], array[i]];
     }
     return array;
-  };
+  }
 
   /**
    * 組み合わせ抽選の処理
    */
   let count = 1;
-  let limit = 1000;
+  let limit = 1000000;
   setTimeout(() => {
     while (count <= limit) {
       //シャッフルした配列
@@ -305,7 +265,6 @@ function draw() {
           for (let i = 0; i < duplicatePlayer.length; i++) {
             for (let j = 0; j < entryArray.length; j++) {
               if (duplicatePlayer[i] == entryArray[j].player_name) {
-                console.log('重複');
                 $('.entry').eq(j).addClass('warning');
               }
             }

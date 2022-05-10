@@ -2,7 +2,14 @@ doctype html
 html(lang='en')
   head
     title= title
-    link(rel='stylesheet', href='/dist/style.css')
-    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    meta(name="description", content="It automatically reads the kill rate from the player name and divides the squads into teams so that the squads have equal total kill rates. You can set how much difference between the total kill rates of each squad is allowed.")
+    link(rel="stylesheet", href="/dist/style.css")
+    link(rel="shortcut icon", href="/images/favicon.png", type="image/png")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(name="twitter:card", content="summary")
+    meta(property="og:url", content="https://infinite-forest-54633.herokuapp.com/")
+    meta(property="og:title", content="POPULATION: ONE Squad Combination Drawing")
+    meta(property="og:description", content="It automatically reads the kill rate from the player name and divides the squads into teams so that the squads have equal total kill rates. You can set how much difference between the total kill rates of each squad is allowed.")
+    meta(property="og:image", content="https://infinite-forest-54633.herokuapp.com/images/twittercard.jpg")
   body.bg-gray-900.text-white
     block content

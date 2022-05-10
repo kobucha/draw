@@ -1,4 +1,4 @@
-import { newPlayerCreate } from './entry.js';
+import { newPlayerCreate, entryArray } from './entry.js';
 
 const fileInput = document.getElementById("file-input");
 const fileReader = new FileReader();
@@ -56,15 +56,17 @@ fileReader.onload = () => {
     }
     return result;
   });
-  console.log(csvEntryArray);
+
+  // entryArray を初期化
+  entryArray.splice(0);
 
   // 子要素を削除（エントリープレイヤー）
   $('#entry').empty();
+  $('.csv-import-message').append(`<p class="text-green-600 text-xl">${csvEntryArray.length} players loaded.</p>`);
   for (let i = 0; i < csvEntryArray.length; i++) {
     newPlayerCreate();
     $(`#player${i + 1} .input-player`).val(csvEntryArray[i].player_name);
   }
-  $('.csv-import-message').append(`<p class="text-green-600 text-xl">${csvEntryArray.length} players loaded.</p>`);
 };
 
 // ファイル読み取り失敗時

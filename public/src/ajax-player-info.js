@@ -30,16 +30,20 @@ function ajaxPostPlayerName(target, targetObject) {
       const seasonKillRate = json.seasonKillRate;
       const avatar = json.avatarUrl;
       const result = `
-      <div class="entry border-4 border-slate-800 mt-3 p-3">
+      <section class="entry border-4 border-slate-800 mt-3 p-3">
         <h2 class="font-barlow_condensed text-xl text-center player-name">${playerName}</h2>
         <dl class="flex flex-wrap justify-between mt-2">
-          <dt class="w-[110px] font-caveat text-xl text-gray-300">career kill rate</dt>
-          <dd class="text-green-500 font-bebas_neue text-xl text-right career-kill-rate w-[calc(100%_-_110px)]">${careerKillRate}</dd>
           <dt class="w-[110px] font-caveat text-xl text-gray-300">season kill rate</dt>
-          <dd class="text-amber-400 font-bebas_neue text-xl text text-right season-kill-rate w-[calc(100%_-_110px)]">${seasonKillRate}</dd>
+          <dd class="season-kill-rate font-bebas_neue text-xl text-right w-[calc(100%_-_110px)]">${seasonKillRate}</dd>
+          <dt class="w-[110px] font-caveat text-xl text-gray-300">career kill rate</dt>
+          <dd class="career-kill-rate font-bebas_neue text-xl text-right w-[calc(100%_-_110px)]">${careerKillRate}</dd>
         </dl>
+        <div class="custom-kill-rate justify-between mt-4 hidden">
+          <label class="w-[110px] font-caveat text-xl text-gray-300">custom rate</label>
+          <input type="number" placeholder="1.74" class="form-input w-[55px] border-0 bg-gray-700 placeholder-gray-500 text-xl text-amber-400 font-bebas_neue focus:ring-2 rounded-lg block py-0.5 px-3 placeholder:text-sm">
+        </div>
         <div class="mt-1 p-3 avatar"><img class="rounded-md" src="${avatar}"></div>
-      </div>`
+      </section>`
       $(`${target}`).append(result);
 
       // エントリープレイヤーの配列に stats のオブジェクトを追加
@@ -55,8 +59,21 @@ function ajaxPostPlayerName(target, targetObject) {
       $('#error-message').empty();
       $('#draw').empty();
       $('#copy').remove();
-      console.log(entryArray);
-      console.log("成功しました");
+
+      // カスタムキルレートを使うにチェックが入っていれば input を表示する
+      if ($('#custom').prop('checked')) {
+        $('.custom-kill-rate').removeClass("hidden");
+        $('.custom-kill-rate').addClass("flex");
+      }
+
+      // プレイヤー情報のキルレート表示のテキスト色
+      if ($('#season').prop("checked")) {
+        $('.season-kill-rate').addClass("text-green-500");
+        $('.career-kill-rate').addClass("text-gray-500");
+      } else if ($('#career').prop("checked")) {
+        $('.season-kill-rate').addClass("text-gray-500");
+        $('.career-kill-rate').addClass("text-green-500");
+      }
     })
     .catch((error) => {
       if (error.name === 'AbortError') {

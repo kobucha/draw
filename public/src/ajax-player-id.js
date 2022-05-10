@@ -1,7 +1,5 @@
 import { ajaxPostPlayerName } from "./ajax-player-info.js";
 
-// ajax 通信処理
-// Fetch でやりたかったが前の通信処理が終わっていない場合は前の通信を中断する処理が分からなかったので断念
 /**
  * Ajax 通信（サーバにプレイヤー名を送り絞り込んだプレイヤー名を返してもらう）
  * @param {object} data API通信用のプレイヤー名 Object {'player': プレイヤー名}
@@ -28,47 +26,39 @@ function doAjax(data, target) {
     timeout: 10000,
   }).done(function (json) {
     // 子要素を削除
-    if ($(`${target} .player-list`).length) {
-      $(`${target} .player-list`).remove();
-    }
-
-    // 検索結果のプレイヤー一覧を消す
-    if ($(`${target} .player-list`).length) {
-      $(document).on('click', () => {
-        $('.player-list').remove();
-      });
-    }
+    $('.player-select').empty();
 
     // プレイヤー候補名を表示
-    let dl = '';
+    let li = '';
     for (let i = 0; i < json.length; i++) {
-      dl += `
-      <dt><img src="${json[i].avatarUrl}"></dt>
-      <dd>${json[i].displayName}</dd>`;
+      li += `
+      <li class="player-choice" style="background-image: url(${json[i].avatarUrl});">
+        ${json[i].displayName}
+      </li>`;
     }
-    $(`${target} .player-select`).append(`<dl class="player-list">${dl}</dl>`);
+    $(`${target} .player-select`).append(`<ul class="player-list bg-gray-800 w-[120%] mt-1.5 absolute z-50">${li}</ul>`);
     // プレイヤー候補名一覧からプレイヤーを選択したときの処理
-    $('.player-list dt, .player-list dd').on('click', (event) => {
-      const clickPlayerName = $(event.target).text();
-      $(`${target} .input-player`).val(clickPlayerName);
-      $('.player-list').remove();
+    $('.player-list li').on('click', (event) => {
 
       // 次の API 通信で使うデータを作成
       let targetObject = { 'id': null }
-      for (let i = 0; i < json.length; i++) {
-        if (`${json[i].displayName}` == clickPlayerName) {
-          targetObject.id = `${json[i].playFabId}`
-        }
-      }
+      const listIndex = $(event.target).index(); // クリックした li の添字
+      targetObject.id = `${json[listIndex].playFabId}` // API サーバに送るプレイヤーID
+
       // プレイヤー ID から プレイヤー情報を取り出す
       ajaxPostPlayerName(target, targetObject);
     });
 
+    // 検索結果のプレイヤー一覧を消す
+    if ($(`${target} .player-list`).length) {
+      $(document).on('click', () => {
+        $(`${target} .player-list`).remove();
+      });
+    }
+
     // 絞り込みが1件だった場合は自動でプレイヤー情報を出力
     if (json.length === 1) {
-      const targetPlayerName = json[0].displayName; // 配列からプレイヤー名を取得
       const targetPlayerID = json[0].playFabId; // 配列からプレイヤー ID を取得
-      $(`${target} .input-player`).val(targetPlayerName);
       $('.player-list').remove();
 
       // 次の API 通信で使うデータを作成
