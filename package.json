@@ -1,9 +1,9 @@
 {
   "name": "draw",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "run-p dev:*",
+    "start": "node ./bin/www",
     "dev:start": "node ./bin/www",
     "dev:css": "postcss ./public/src/input.css -o ./public/dist/style.css --watch",
     "build": "NODE_ENV=production postcss ./public/src/input.css -o ./public/dist/style.css",
