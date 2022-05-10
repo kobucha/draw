@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "run-p dev:*",
+    "start": "node ./bin/www",
+    "dev": "run-p dev:*",
     "dev:start": "node ./bin/www",
     "dev:css": "postcss ./public/src/input.css -o ./public/dist/style.css --watch",
     "build": "NODE_ENV=production postcss ./public/src/input.css -o ./public/dist/style.css",
