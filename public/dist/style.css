@@ -688,15 +688,23 @@ select{
 .top-5{
   top: 1.25rem;
 }
+.-top-5{
+  top: -1.25rem;
+}
+.-top-4{
+  top: -1rem;
+}
+.left-2{
+  left: 0.5rem;
+}
+.left-2\.5{
+  left: 0.625rem;
+}
 .z-50{
   z-index: 50;
 }
 .z-10{
   z-index: 10;
-}
-.mx-auto{
-  margin-left: auto;
-  margin-right: auto;
 }
 .mt-3{
   margin-top: 0.75rem;
@@ -814,9 +822,6 @@ select{
 }
 .w-7{
   width: 1.75rem;
-}
-.max-w-\[1200px\]{
-  max-width: 1200px;
 }
 @-webkit-keyframes fadeIn{
   0%{
@@ -985,10 +990,6 @@ select{
   --tw-bg-opacity: 1;
   background-color: rgb(31 41 55 / var(--tw-bg-opacity));
 }
-.bg-gray-900{
-  --tw-bg-opacity: 1;
-  background-color: rgb(17 24 39 / var(--tw-bg-opacity));
-}
 .p-3{
   padding: 0.75rem;
 }
@@ -1024,10 +1025,6 @@ select{
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
 }
-.py-7{
-  padding-top: 1.75rem;
-  padding-bottom: 1.75rem;
-}
 .py-1\.5{
   padding-top: 0.375rem;
   padding-bottom: 0.375rem;
@@ -1039,10 +1036,6 @@ select{
 .py-3{
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
-}
-.py-2{
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
 }
 .pl-7{
   padding-left: 1.75rem;
@@ -1196,6 +1189,28 @@ select{
 .\!filter{
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow) !important;
 }
+body{
+    display: grid;
+    grid-template:
+    "header"
+    "entry" 1fr
+    "btn"
+    "error"
+    "draw"
+    "footer";
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 100vh;
+    max-width: 1200px;
+    --tw-bg-opacity: 1;
+    background-color: rgb(17 24 39 / var(--tw-bg-opacity));
+    padding-top: 1.75rem;
+    padding-bottom: 1.75rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+  }
 .animation-delay-100 {
     -webkit-animation-delay: 0.1s;
             animation-delay: 0.1s;

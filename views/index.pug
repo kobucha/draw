@@ -1,42 +1,43 @@
 extends layout
 
 block content
-  div.mx-auto.py-7.px-5(class="max-w-[1200px]")
-    header#header.flex.gap-3.justify-between.items-start.flex-wrap
-      div.flex.items-end
-        h1
-          img(src="./images/PoponeLogo.png", alt="POPULATION: ONE", class="md:max-w-[400px]")
-        span.font-anton.text-5xl.pl-4(class="md:text-7xl md:pl-8") Draw
-      div.mt-2
-        label.cursor-pointer.block(for="season")
-          input.form-radio.text-blue-600(type="radio", name="use-kill-rate", id="season", value="season", class="focus:ring-blue-700" checked)
-          span.text-sm.ml-2 Use the Season kill rate
-        label.cursor-pointer.block(for="career")
-          input.form-radio.text-blue-600(type="radio", name="use-kill-rate", id="career", value="career", class="focus:ring-blue-700")
-          span.text-sm.ml-2 Use the Career kill rate
-        label.cursor-pointer.block(for="custom")
-          input.form-checkbox.text-blue-600(type="checkbox", id="custom", value="custom", class="focus:ring-blue-700")
-          span.text-sm.ml-2 Use the Custom kill rate
-      div.mt-2.flex.flex-wrap.gap-4.justify-center.items-center(class="md:block")
-        div#import-file.flex.items-center.gap-3
-          label.bg-blue-700.text-xs.px-3.py-1.rounded-md(for="file-input" class="hover:cursor-pointer hover:bg-blue-800") CSV import
-          input#file-input.hidden(type="file" name="file[]" accept="text/csv")
-          div.bg-blue-700.text-xs.px-3.py-1.rounded-md(class="hover:bg-blue-800")
-            a(href="./csv/example.csv") CSV Download
-        div.flex.items-center.gap-3(class="md:mt-3")
-          label.text-sm(for="adjust") Kill rate tolerance
-          input#adjust(type="number" class="bg-gray-700 border-gray-600 placeholder-gray-500 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-lg rounded-lg block px-3 py-1.5 w-24" value="0.5" step="0.05" min="0" max="2")          
-    div#entry.grid.grid-cols-2.gap-x-5.gap-y-8.mt-8(class="sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6")
-    div#draw-btn.mt-10.text-center
-      button.relative(class="text-white bg-blue-700 hover:bg-blue-800 rounded-lg text-5xl font-alfa_slab_one px-12 py-3 inline-block") Draw
-        div.loading.hidden
-          svg.animate-spin.h-7.w-7.text-white.absolute.left-3.top-5(xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24")
-            circle.opacity-25(cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4")
-            path.opacity-75(fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z")
+  header#header.flex.gap-3.justify-between.items-start.flex-wrap
+    div.flex.items-end
+      h1
+        img(src="./images/PoponeLogo.png", alt="POPULATION: ONE", class="md:max-w-[400px]")
+      span.font-anton.text-5xl.pl-4(class="md:text-7xl md:pl-8") Draw
+    div.mt-2
+      label.cursor-pointer.block(for="season")
+        input.form-radio.text-blue-600(type="radio", name="use-kill-rate", id="season", value="season", class="focus:ring-blue-700" checked)
+        span.text-sm.ml-2 Use the Season kill rate
+      label.cursor-pointer.block(for="career")
+        input.form-radio.text-blue-600(type="radio", name="use-kill-rate", id="career", value="career", class="focus:ring-blue-700")
+        span.text-sm.ml-2 Use the Career kill rate
+      label.cursor-pointer.block(for="custom")
+        input.form-checkbox.text-blue-600(type="checkbox", id="custom", value="custom", class="focus:ring-blue-700")
+        span.text-sm.ml-2 Use the Custom kill rate
+    div.mt-2.flex.flex-wrap.gap-4.justify-center.items-center(class="md:block")
+      div#import-file.flex.items-center.gap-3
+        label.bg-blue-700.text-xs.px-3.py-1.rounded-md(for="file-input", class="hover:cursor-pointer, hover:bg-blue-800") CSV import
+        input#file-input.hidden(type="file" name="file[]" accept="text/csv")
+        div.bg-blue-700.text-xs.px-3.py-1.rounded-md(class="hover:bg-blue-800")
+          a(href="./csv/example.csv") CSV Download
+      div.flex.items-center.gap-3(class="md:mt-3")
+        label.text-sm(for="adjust") Kill rate tolerance
+        input#adjust(type="number" class="bg-gray-700 border-gray-600 placeholder-gray-500 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-lg rounded-lg block px-3 py-1.5 w-24" value="0.5" step="0.05" min="0" max="2")          
+  div#entry.grid.grid-cols-2.gap-x-5.gap-y-8.mt-8(class="sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6")
+  div#draw-btn.mt-10.text-center
+    span.relative
+      button(class="text-white bg-blue-700 hover:bg-blue-800 rounded-lg text-5xl font-alfa_slab_one px-12 py-3") Draw
+      div.loading.hidden
+        svg.animate-spin.h-7.w-7.text-white.absolute.-top-4(class="left-2.5", xmlns="http://www.w3.org/2000/svg", fill="none", viewBox="0 0 24 24")
+          circle.opacity-25(cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4")
+          path.opacity-75(fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z")
+  div
     div#success-message.mt-16
     div#error-message.mt-16
-    div#draw.grid.grid-cols-1.gap-x-5.gap-y-8.mt-16(class="sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4")
-  footer.flex.justify-center.items-center.gap-5.text-gray-100.text-center.py-2.mt-24
+  div#draw.grid.grid-cols-1.gap-x-5.gap-y-8.mt-16(class="sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4")
+  footer.flex.justify-center.items-center.gap-5.text-gray-100.text-center.mt-24
     div &copy; 2022 JPB_NECOBUS
     a(href="https://twitter.com/necobusVR", target="_blank", rel="noopener noreferrer")
       img(src="./images/twitter-logo.svg", width="20", alt="Twitter")

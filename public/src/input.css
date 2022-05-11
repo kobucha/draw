@@ -3,6 +3,19 @@
 @tailwind components;
 @tailwind utilities;
 @layer utilities {
+  body{
+    display: grid;
+    grid-template:
+    "header"
+    "entry" 1fr
+    "btn"
+    "error"
+    "draw"
+    "footer";
+  }
+  body{
+     @apply max-w-[1200px] min-h-screen bg-gray-900 text-white mx-auto py-7 px-5;
+  }
   .animation-delay-100 {
     animation-delay: 0.1s;
   }
